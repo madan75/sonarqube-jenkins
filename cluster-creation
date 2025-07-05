@@ -45,5 +45,8 @@ cluster
 
 
 
+
 delet
 vpc,s3 buckets, loadbalancers, auto scaling, volumes, security groups
+kops delete cluster --name rup13.k8s.local --state s3://rup13.k8s.local --yes
+
