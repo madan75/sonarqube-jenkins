@@ -26,13 +26,14 @@ cluster
 
      aws s3api create-bucket \
   --bucket madan26.k8s.local \
-  --region ap-northeast-1 \
-  --create-bucket-configuration LocationConstraint=ap-northeast-1
+  --region ap-south-1 \
+  --create-bucket-configuration LocationConstraint=ap-south-1
 
      aws s3api put-bucket-versioning --bucket madan26.k8s.local --region ap-south-1 --versioning-configuration Status=Enabled
+
      export KOPS_STATE_STORE=s3://madan26.k8s.local
 
-     kops create cluster   --name=madan29.k8s.local   --zones=ap-south-1a   --node-count=2   --node-size=t3.medium   --master-size=t3.medium   --dns=none   --yes
+     kops create cluster   --name=madan26.k8s.local   --zones=ap-south-1a   --node-count=2   --node-size=t3.medium   --master-size=t3.medium   --dns=none   --yes
      kops get cluster
      kops update cluster --name madan26.k8s.local --yes --admin
        kops rolling-update cluster --cloudonly
