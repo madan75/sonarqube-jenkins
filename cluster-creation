@@ -25,17 +25,17 @@ cluster
      aws configure
 
      aws s3api create-bucket \
-  --bucket madan89.k8s.local \
-  --region us-west-2 \
-  --create-bucket-configuration LocationConstraint=us-west-2
+  --bucket madan517.k8s.local \
+  --region ap-northeast-3 \
+  --create-bucket-configuration LocationConstraint=ap-northeast-3
 
-     aws s3api put-bucket-versioning --bucket madan89.k8s.local --region us-west-2 --versioning-configuration Status=Enabled
+     aws s3api put-bucket-versioning --bucket madan517.k8s.local --region ap-northeast-3 --versioning-configuration Status=Enabled
 
-     export KOPS_STATE_STORE=s3://madan89.k8s.local
+     export KOPS_STATE_STORE=s3://madan517.k8s.local
 
-     kops create cluster   --name=madan89.k8s.local   --zones=us-west-2a   --node-count=2   --node-size=t3.medium   --master-size=t3.medium   --dns=none   --yes
+     kops create cluster   --name=madan517.k8s.local   --zones=ap-northeast-3a   --node-count=2   --node-size=t3.medium   --master-size=t3.medium   --dns=none   --yes
      kops get cluster
-     kops update cluster --name madan89.k8s.local --yes --admin
+     kops update cluster --name madan517.k8s.local --yes --admin
        kops rolling-update cluster --cloudonly
      kops rolling-update cluster
      kubectl get nodes
@@ -45,5 +45,5 @@ cluster
 
 delet
 vpc,s3 buckets, loadbalancers, auto scaling, volumes, security groups
-kops delete cluster --name madan89.k8s.local --state s3://madan89.k8s.local --yes
+kops delete cluster --name madan517.k8s.local --state s3://madan89.k8s.local --yes
 
