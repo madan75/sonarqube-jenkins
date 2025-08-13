@@ -25,17 +25,17 @@ cluster
      aws configure
 
      aws s3api create-bucket \
-  --bucket madan2629.k8s.local \
+  --bucket madan22.k8s.local \
   --region ap-northeast-3 \
   --create-bucket-configuration LocationConstraint=ap-northeast-3
 
-     aws s3api put-bucket-versioning --bucket madan2629.k8s.local --region ap-northeast-3 --versioning-configuration Status=Enabled
+     aws s3api put-bucket-versioning --bucket madan22.k8s.local --region ap-northeast-3 --versioning-configuration Status=Enabled
 
-     export KOPS_STATE_STORE=s3://madan2629.k8s.local
+     export KOPS_STATE_STORE=s3://madan22.k8s.local
 
-     kops create cluster   --name=madan2629.k8s.local   --zones=ap-northeast-3a   --node-count=2   --node-size=t3.medium   --master-size=t3.medium   --dns=none   --yes
+     kops create cluster   --name=madan22.k8s.local   --zones=ap-northeast-3a   --node-count=2   --node-size=t3.medium   --master-size=t3.medium   --dns=none   --yes
      kops get cluster
-     kops update cluster --name madan2629.k8s.local --yes --admin
+     kops update cluster --name madan22.k8s.local --yes --admin
        kops rolling-update cluster --cloudonly
      kops rolling-update cluster
      kubectl get nodes
