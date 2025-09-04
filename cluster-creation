@@ -25,7 +25,7 @@ cluster
      aws configure
 
      aws s3api create-bucket \
-  --bucket madan41.k8s.local \
+  --bucket madan42.k8s.local \
   --region ap-southeast-1 \
   --create-bucket-configuration LocationConstraint=ap-southeast-1
 
